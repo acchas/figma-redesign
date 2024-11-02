@@ -1,0 +1,312 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+
+}
+
+
+:root {
+
+    --z80: translateZ(80px);
+    /*kan ej ta bort än*/
+    --ts: all .5s ease;
+    --light-pink: #fff4ed;
+    --dark-purple: rgb(89, 0, 255);
+    --purple: rgb(157, 0, 255);
+
+
+}
+/*
+.row::after {
+ 
+    clear: both;
+    display: block;
+}
+
+*/
+html {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--light-pink);
+
+
+}
+.container{
+    display: flex;
+
+   
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    max-width: 100dvw;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+
+  
+
+}
+.column {
+ display: block;
+ 
+}
+
+.title-container{
+    display: flex;
+
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 15%;
+
+
+ 
+  
+}
+.main-menu {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 10rem;
+   
+
+   
+}
+.page-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    align-self: center;
+
+    max-width: 100dvw;
+
+
+
+}
+
+.page-title, h1{
+ 
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    align-self: center;
+
+    
+    font-size: calc(6rem);
+    max-width: 100dvw;
+    z-index: -1;
+    font-weight: 200;
+    transform: scale(.7, 1);
+    letter-spacing:calc(1.4rem);
+    letter-spacing:calc(5vw);
+ 
+}
+ol {
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+
+li {
+    display: flex;
+    /*
+    height: 10rem;
+    width: 10rem;*/
+    height:calc(4rem + 1vw);
+    width: calc(4rem + 1vw);
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 10rem;
+
+}
+
+
+li span {
+    display: flex;
+    /*height: 7.5rem;
+    width: 7.5rem;*/
+    height:calc(3rem + 1vw);
+    width: calc(3rem + 1vw);
+    border-radius: 50%;
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+
+    transform-style: preserve-3d;
+    /*blir konstigt ifall jag tar bort denna*/
+}
+
+li span::before,
+li span::after {
+    display: flex;
+    height: 7.5rem;
+    width: 7.5rem;
+   /* height:calc(5rem + 1vw);
+    width: calc(5rem + 1vw);*/
+    display: flex;
+    position: absolute;
+    border-radius: 50%;
+    font-weight: 100;
+    text-align: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+li span:hover {
+    display: flex;
+    transform: scale3d(5 5 5);
+}
+
+.drop-down::before,
+.drop-down::after {
+    background: var(--purple);
+    color: var(--light-pink);
+    box-shadow: var(--dark-purple) 0 0 0.4rem 0, var(--dark-purple) 0 0 0.4rem 0;
+
+}
+
+.drop-down::before,
+.drop-down::after {
+    content: " ";
+}
+
+
+.sub-menu {
+    top: 0;
+    display: none;
+    position: absolute;
+}
+
+.sub-menu li {
+    opacity: 0;
+
+}
+
+.sub-item:nth-of-type(1) {
+    -webkit-animation: fade 0.5s ease 0.2s both;
+    animation: fade 0.5s ease 0.2s both;
+}
+
+.sub-item:nth-of-type(2) {
+    -webkit-animation: fade 0.5s ease 0.4s both;
+    animation: fade 0.5s ease 0.4s both;
+}
+
+.sub-item:nth-of-type(3) {
+    -webkit-animation: fade 0.5s ease 0.6s both;
+    animation: fade 0.5s ease 0.6s both;
+}
+
+.sub-item:nth-of-type(4) {
+    -webkit-animation: fade 0.5s ease 0.6s both;
+    animation: fade 0.5s ease 0.6s both;
+}
+
+@-webkit-keyframes fade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sub-item span::before {
+    background: var(--purple);
+    color: var(--light-pink);
+    transform: var(--z80);
+    box-shadow: var(--dark-purple) 0 0 0.4rem 0, var(--dark-purple) 0 0 0.4rem 0;
+}
+
+.sub-item:hover span {
+    transform: scale3d(1.1, 1.1, 1.1);
+    transition: var(--ts);
+}
+
+.menu::before,
+.menu::after {
+    content: "menu";
+    font-size: 1.7rem;
+    letter-spacing: 0.2rem;
+}
+
+.home::before,
+.home::after {
+    content: "home";
+    font-size: 1.7rem;
+    letter-spacing: 0.2rem;
+}
+
+.about::before,
+.about::after {
+    content: "about";
+    font-size: 1.7rem;
+    letter-spacing: 0.2rem;
+
+}
+
+.contact::before,
+.contact::after {
+    content: "contact";
+    font-size: 1.5rem;
+}
+
+.main-item:hover .sub-menu {
+    display: block;
+}
+
+
+ @media screen and (max-width: 769px) {
+
+    
+    [class*="column"] {
+        display: block;
+        max-width: 100dvw;
+   
+  
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+
+    [class*="column"] {
+        display: flex;
+        column-gap: 10%;
+        max-width: 100dvw;
+        padding:1rem;
+    
+    }
+}
