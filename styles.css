@@ -1,55 +1,57 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box;  
     margin: 0;
     padding: 0;
 }
 
 :root {
     --light-pink: #fff4ed;
-    --dark-purple: rgb(89, 0, 255);
-    --purple: rgb(157, 0, 255);
+    --softer-pink:#ffe7f9;
+    --harder-pink: #ffc9f1;
+    --hard-pink:  #ffb8ed;
+    --dark-purple: #6715ff;
+    --purple: rgb(179, 0, 255);
     --font-size-3: 25px;
 }
 
 html {
     font-family: "Poppins", sans-serif;
-    background-color: var(--light-pink);
+   background-color: var(--softer-pink);
 }
-
-.container {
+.header-container {
     display: flex;
     align-items: center;
-    padding-top: 3rem;
+    justify-items: center;
+
     padding-left: 3rem;
+    justify-content: space-between;
    
 }
-
-/* Dropdown-knapp */
 .menu-container {
     display: flex;
-
     height:calc(4rem + 5dvw);
     width: calc(4rem + 5dvw);
     background-color: var(--purple);
-
     box-shadow: var(--dark-purple) 0 0 0.4rem 0, var(--dark-purple) 0 0 0.4rem 0;
-   
-    flex-direction: column;
- 
+    z-index: 1;
+    flex-direction: column;  
     border-radius: 50%;
-    position: absolute;
+    position: relative;
     justify-content: center;
     align-items: center;
-    font-size: var(--font-size-3);
+    justify-self: center;
+    align-self: center;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
     padding-bottom: 1rem;
+    top:2rem;
+
  
 }
 
-/* Drop-list styles */
 .drop-list {
     display: none;
     position: absolute;
@@ -59,150 +61,225 @@ html {
     flex-direction: column;
     list-style: none;
     
-    gap: 0.9rem;
-    padding-top: 0.9rem;
+    
+    gap: 1rem;
+    padding-top: 1rem;
  
 }
 
 .menu-container:hover .drop-list {
     display: flex;
     
-}
-.menu-container:hover{
-    content: "menu";
     
 }
 
 
-.drop-list>li {
+.drop-list>a {
     height:calc(4rem + 5dvw);
     width: calc(4rem + 5dvw);
     border-radius: 50%;
     background-color: var(--purple);
-
     box-shadow: var(--dark-purple) 0 0 0.4rem 0, var(--dark-purple) 0 0 0.4rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
     
 }
 
-.drop-list>li>a {
-    text-decoration: none;
-    color: var(--light-pink);
+.drop-list>a>li {
+  color: var(--light-pink);
+    font-weight: lighter;
+    text-align: center;
+    font-size:calc(1.8dvh);
+    letter-spacing: calc(1dvw);
+    transform: scale(.9, 1);
+
+    
   
 }
-.drop-list li:hover {
- 
-    transform: scale3d(5 5 5);
+.drop-list> a>li:last-of-type{
+    color: var(--light-pink);
+    font-weight: lighter;
+    text-align: center;
+    font-size:calc(1.8dvh);
+    letter-spacing: calc(0.4dvw);
+    transform: scale(.9, 1);
+
+    
+  
 }
 
+.col{
+    display:flex;
+    contain: content;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+   
 
-/* Titel som anpassar sig i storlek */
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    padding-top: 7rem;
+}
+.title-container{
+    display:flex; 
+    contain: content;
+    height:fit-content;
+    justify-content: end;
+    align-content: flex-end;
+    flex-direction: column;
+    max-width:80dvw;
+    padding-top: 1rem;    
+
+}
+
 .title-head{
     display:flex;
-    justify-content: center;
-    align-items: center;
-    justify-self: center;
-   /* transform: scale(.6, 1);*/
-    border: 1px solid red; 
+    text-align:start;
     font-size:calc(13dvw);
-    padding-top: 0.5rem;
     font-weight: lighter;
-    max-width: 100vw;
- 
     letter-spacing: calc(5dvw);
+    transform: scale(.7, 0.8);
+    color:  var(--purple);
+    overflow-wrap: break-word;
+    white-space: nowrap;
+    font-weight: 100;
+}
+
+.name{
+    display:flex;   
+    font-size:calc(9dvw);
+    font-weight: lighter;
+    letter-spacing: calc(2dvw);
     transform: scale(.7, 1);
-  
     color:  var(--purple);
     text-align: center;
     overflow-wrap: break-word;
-    /* Bryter om ord vid behov */
     white-space: nowrap;
-
-    margin-left: 15%;
-    /* Tar upp återstående utrymme */
-    height: 8rem;
-
-    /* Anpassas efter bredden på viewport */
+    margin-top: 2dvh;
     font-weight: 100;
-    max-width: 100vw;
-
-}
-.name{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    justify-self: center;
-    transform: scale(.7, 1);
-    border: 1px solid red;
-    font-family: "Poppins", sans-serif;
-    font-size:calc(5vw);
-    font-weight: lighter;
-
-    /* Anpassas efter bredden på viewport */
-    
-    max-width: 100vw;
-    letter-spacing: calc(4vw);
-
    
-  
-    color: var(--purple);
-    text-align: center;
-    overflow-wrap: break-word;
-    /* Bryter om ord vid behov */
-    white-space: nowrap;
-
-    margin-top: 15%;
-    /* Tar upp återstående utrymme */
-    
 
 
 }
-.title{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    justify-self: center;
-    transform: scale(.7, 1);
-    border: 1px solid red;
-    font-family: "Poppins", sans-serif;
-    font-size:calc(5vw);
-    font-stretch:ultra-condensed;
 
-    /* Anpassas efter bredden på viewport */
-    
-    max-width: 100vw;
-    letter-spacing: calc(4vw);
-
-   
+#item-1{
+    background-image: url(images/peps-pinne-i-skägget.jpg);
+    background-position: top center;
   
-    color: var(--purple);
-    text-align: center;
-    overflow-wrap: break-word;
-    /* Bryter om ord vid behov */
-    white-space: nowrap;
+}
 
-    margin-top: 5%;
-    /* Tar upp återstående utrymme */
+#item-2{
+    background-image: url(../images/realistic-ice-top.jpg);
  
-
 }
+
+
 
 /* Responsiv anpassning för mobila enheter */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-    }
+    
 
-    .title-head{
-        margin-left: 0;
-        width: 100%;
-        height: auto;
-        padding-top: 25vh;
-     
+
+    .col *{
+       
+        
+        margin: 0;
+        max-height: fit-content;
+        border: 1px solid var(--hard-pink); 
+        background:var(--harder-pink);
+        text-align: center;
+        justify-content: center;
+        min-width:200dvw;
+      
+        border-radius: 1rem;
+       
+      
         
     }
+    .title-container{
+        margin-left: 0;
+        min-width:100dvw;
+        padding-top: 11dvh;
+        padding-bottom: 10dvh;
+      
+      
+    }
+    
+    .item {
+        
+        flex-direction: column;
+        height: 100dvh;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+     
+  
+      }
+      .land{
+        flex-direction: column;
+        max-width: 100dvw;
+        background-attachment: scroll;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+
+
+      }
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+        align-items: center;
+        justify-items: center;
+    
+        padding-left: 3rem;
+        justify-content: space-between;
+     
+   
+    }
+    .header-container {
+        flex-direction: column;
+       
+        padding: 1rem;
+    }
+}
+@media (min-width: 769px) {
+    .item{
+        min-height: 200dvh;
+        
+        background-attachment:fixed;
+        
+        background-position: top;
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-width:min-content;
+      }
+      .port{
+        min-height:300dvh;
+        
+        background-attachment:scroll;
+        
+        background-position: top;
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-width:min-content;
+        
+      }
+      .container{
+        display: flex;
+        padding-left: 3rem;
+        padding-top:7rem;
+     
+     
+      }
+
+
 }
